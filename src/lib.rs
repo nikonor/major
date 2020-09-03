@@ -1,3 +1,5 @@
+mod train;
+
 use std::fmt::Error;
 
 pub struct DoWhat {
@@ -18,6 +20,7 @@ pub fn parse_cmd(args: Vec<String>) -> DoWhat {
 
 pub fn get_train(from: String, to: String) -> Result<String, Error> {
     println!("\t\tВызов get_train для {}-{}", from, to);
+    self::train::qwe();
     Ok("Ok".to_string())
 }
 
