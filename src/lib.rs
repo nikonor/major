@@ -1,6 +1,4 @@
-mod train;
-
-use std::fmt::Error;
+pub mod funcs;
 
 pub struct DoWhat {
     pub cmd: Option<String>,
@@ -16,15 +14,4 @@ pub fn parse_cmd(args: Vec<String>) -> DoWhat {
     };
 
     return ret;
-}
-
-pub fn get_train(from: String, to: String) -> Result<String, Error> {
-    println!("\t\tВызов get_train для {}-{}", from, to);
-    self::train::qwe();
-    Ok("Ok".to_string())
-}
-
-pub fn set_alarm(time: String) -> Result<String, Error> {
-    println!("\t\tВызов set_alarm для {}", time);
-    Ok("Ok".to_string())
 }

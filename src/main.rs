@@ -1,5 +1,5 @@
+use funcs;
 use major::*;
-// use std::env;
 use std::io;
 
 fn main() {
@@ -40,7 +40,8 @@ fn call(c: DoWhat) -> bool {
                 c.params[0].as_str(),
                 c.params[1].as_str()
             );
-            let r = match get_train(c.params[0].to_string(), c.params[1].to_string()) {
+            let r = match funcs::train::get_train(c.params[0].to_string(), c.params[1].to_string())
+            {
                 Ok(s) => s,
                 Err(e) => format!("Ошибка:{}", e.to_string()),
             };
@@ -48,7 +49,7 @@ fn call(c: DoWhat) -> bool {
         }
         "ALARM" => {
             println!("\tСтавим будильник на {}", c.params[0].as_str());
-            let r = match set_alarm(c.params[0].to_string()) {
+            let r = match funcs::alarm::set_alarm(c.params[0].to_string()) {
                 Ok(s) => s,
                 Err(e) => format!("Ошибка:{}", e.to_string()),
             };
